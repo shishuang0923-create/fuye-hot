@@ -17,12 +17,12 @@ jobs:
         run: pip install requests
       - name: 运行脚本
         run: python main.py
-      - name: 列出public目录内容（调试）
+      - name: 列出public目录
         run: ls -la public/
       - name: 部署到GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./public
           force: true
           publish_branch: gh-pages
